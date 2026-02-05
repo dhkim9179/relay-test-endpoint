@@ -1,0 +1,21 @@
+server:
+  port: 18091
+
+spring:
+  application:
+    name: relay-test-endpoint
+
+# Jasypt encryption password (set via environment variable or system property)
+jasypt:
+  encryptor:
+    password: ${JASYPT_PASSWORD:defaultPassword}
+    algorithm: PBEWithMD5AndDES
+
+# Encryption keys (encrypted with Jasypt - dummy values)
+encryption:
+  key: ENC(dummyEncryptedKey123456789)
+  hash-key: ENC(dummyEncryptedHashKey123456789)
+
+logging:
+  level:
+    kr.co.hectofinancial.mps: DEBUG
